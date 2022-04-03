@@ -5,6 +5,7 @@ import PersonListItemLarge from "./comoponents/PersonListItemLarge";
 import PersonListItemSmall from "./comoponents/PersonListItemSmall";
 import ProductListItemLarge from "./comoponents/ProductListItemLarge";
 import ProductListItemSmall from "./comoponents/ProductListItemSmall";
+import Modal from "./comoponents/Modal";
 
 const people = [
   {
@@ -39,6 +40,9 @@ const products = [
 function App() {
   return (
     <>
+      <Modal>
+        <ProductListItemLarge product={products[0]} />
+      </Modal>
       <ListBase
         items={people}
         resourceName="person"
