@@ -1,7 +1,7 @@
 function UserInfo({ user }) {
-  const { name, age, hairColor, hobbies } = user;
+  const { name, age, hairColor, hobbies } = user || {};
 
-  return (
+  return user ? (
     <>
       <h3>{name}</h3>
       <p>Age: {age} years</p>
@@ -13,6 +13,8 @@ function UserInfo({ user }) {
         ))}
       </ul>
     </>
+  ) : (
+    <p>Loading...</p>
   );
 }
 

@@ -1,6 +1,6 @@
 function ProductInfo({ product }) {
-  const { name, price, description, rating } = product;
-  return (
+  const { name, price, description, rating } = product || {};
+  return product ? (
     <>
       <h3>{name}</h3>
       <p>{price}</p>
@@ -8,6 +8,8 @@ function ProductInfo({ product }) {
       <p>{description}</p>
       <p>Average Rating: {rating}</p>
     </>
+  ) : (
+    <p>Loading...</p>
   );
 }
 
