@@ -9,6 +9,29 @@ import UncontrolledOnboardingFlow from "./comoponents/controlled/UncontrolledOnb
 import ControlledOnboardingFlow from "./comoponents/controlled/ControlledOnboardingFlow";
 import printProps from "./comoponents/hoc/printProps";
 import UserInfoForm from "./comoponents/hoc/UserInfoForm";
+import RecursiveComponent from "./comoponents/recursive/RecursiveComponent";
+
+const nestedObject = {
+  a: 1,
+  b: {
+    b1: 4,
+    b2: {
+      b23: "Hello"
+    },
+    b3: {
+      b31: {
+        message: "Hi"
+      },
+      b32: {
+        message: "Hi"
+      }
+    }
+  },
+  c: {
+    c1: 2,
+    c2: 3
+  }
+};
 
 const UserInfoWrapped = printProps(UserInfo);
 
@@ -61,6 +84,7 @@ function App() {
 
   return (
     <>
+      <RecursiveComponent data={nestedObject} />
       <ProductInfo productId="1234" />
       <UserInfo userId="123" />
       <UserInfoForm />
