@@ -11,6 +11,10 @@ import printProps from "./comoponents/hoc/printProps";
 import UserInfoForm from "./comoponents/hoc/UserInfoForm";
 import RecursiveComponent from "./comoponents/fp/RecursiveComponent";
 import { DangerButton, BigSuccessButton } from "./comoponents/fp/composition";
+import {
+  DangerButton as DangerButton2,
+  BigSuccessButton as BigSuccessButton2
+} from "./comoponents/fp/partiallyApply";
 
 const nestedObject = {
   a: 1,
@@ -85,6 +89,10 @@ function App() {
 
   return (
     <>
+      <DangerButton2 text="DangerButton2" />
+      <BigSuccessButton2 text="BigSuccessButton2" />
+      <br />
+
       <DangerButton text="DangerButton" />
       <BigSuccessButton text="BigSuccessButton" />
 
