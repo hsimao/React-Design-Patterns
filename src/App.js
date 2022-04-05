@@ -9,7 +9,8 @@ import UncontrolledOnboardingFlow from "./comoponents/controlled/UncontrolledOnb
 import ControlledOnboardingFlow from "./comoponents/controlled/ControlledOnboardingFlow";
 import printProps from "./comoponents/hoc/printProps";
 import UserInfoForm from "./comoponents/hoc/UserInfoForm";
-import RecursiveComponent from "./comoponents/recursive/RecursiveComponent";
+import RecursiveComponent from "./comoponents/fp/RecursiveComponent";
+import { DangerButton, BigSuccessButton } from "./comoponents/fp/composition";
 
 const nestedObject = {
   a: 1,
@@ -84,6 +85,9 @@ function App() {
 
   return (
     <>
+      <DangerButton text="DangerButton" />
+      <BigSuccessButton text="BigSuccessButton" />
+
       <RecursiveComponent data={nestedObject} />
       <ProductInfo productId="1234" />
       <UserInfo userId="123" />

@@ -10,7 +10,7 @@ function RecursiveComponent({ data }) {
   return (
     <>
       {pairs.map(([key, value]) => (
-        <li>
+        <li key={key}>
           {key}:
           <ul>
             <RecursiveComponent data={value} />
