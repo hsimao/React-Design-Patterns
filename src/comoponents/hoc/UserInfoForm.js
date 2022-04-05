@@ -1,7 +1,7 @@
-import withEditUser from "./withEditUser";
+import withEditResource from "./withEditResource";
 
-const UserInfoForm = withEditUser(
-  ({ user, onChangeUser, onSaveUser, onResetUser }) => {
+const UserInfoForm = withEditResource(
+  ({ user, onChangeUser, onSaveUser, onResetUser, ...args }) => {
     const { name, age, job } = user || {};
 
     return user ? (
@@ -38,7 +38,8 @@ const UserInfoForm = withEditUser(
       <p>Loading...</p>
     );
   },
-  "123"
+  "/users/123",
+  "user"
 );
 
 export default UserInfoForm;
