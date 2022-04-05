@@ -1,4 +1,7 @@
-function UserInfo({ user }) {
+import useUser from "../hooks/useUser";
+
+function UserInfo({ userId }) {
+  const user = useUser(userId);
   const { name, age, hairColor, hobbies } = user || {};
 
   return user ? (

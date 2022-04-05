@@ -8,12 +8,9 @@ import UserInfo from "./comoponents/UserInfo";
 import UncontrolledOnboardingFlow from "./comoponents/controlled/UncontrolledOnboardingFlow";
 import ControlledOnboardingFlow from "./comoponents/controlled/ControlledOnboardingFlow";
 import printProps from "./comoponents/hoc/printProps";
-import withUser from "./comoponents/hoc/withUser";
 import UserInfoForm from "./comoponents/hoc/UserInfoForm";
 
 const UserInfoWrapped = printProps(UserInfo);
-
-const UserInfoWithLoader = withUser(UserInfo, "123");
 
 const getServerData = (url) => async () => {
   const response = await axios.get(url);
@@ -64,9 +61,9 @@ function App() {
 
   return (
     <>
+      <UserInfo userId="123" />
       <UserInfoForm />
-      <UserInfoWithLoader />
-      <UserInfoWrapped a={1} b="hello" />
+      <UserInfoWrapped a={1} b="hello" userId="234" />
       <ControlledOnboardingFlow
         currentIndex={currentIndex}
         onNext={onNext}
