@@ -1,7 +1,9 @@
 import useUser from "../hooks/useUser";
+import useResource from "../hooks/useResource";
 
 function UserInfo({ userId }) {
-  const user = useUser(userId);
+  // const user = useUser(userId);
+  const user = useResource(`/users/${userId}`);
   const { name, age, hairColor, hobbies } = user || {};
 
   return user ? (

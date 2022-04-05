@@ -1,4 +1,7 @@
-function ProductInfo({ product }) {
+import useResource from "../hooks/useResource";
+
+function ProductInfo({ productId }) {
+  const product = useResource(`/products/${productId}`);
   const { name, price, description, rating } = product || {};
   return product ? (
     <>

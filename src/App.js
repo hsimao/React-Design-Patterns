@@ -61,6 +61,7 @@ function App() {
 
   return (
     <>
+      <ProductInfo productId="1234" />
       <UserInfo userId="123" />
       <UserInfoForm />
       <UserInfoWrapped a={1} b="hello" userId="234" />
