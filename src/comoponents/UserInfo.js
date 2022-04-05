@@ -1,9 +1,18 @@
-import useUser from "../hooks/useUser";
-import useResource from "../hooks/useResource";
+import useDataSource from "../hooks/useDataSource";
+import axios from "axios";
+
+const serverResource = (url) => async () => {
+  const response = await axios.get(url);
+  return response.data;
+};
+
+const localStorageResource = (key) => () => localStorage.getItem(key);
 
 function UserInfo({ userId }) {
-  // const user = useUser(userId);
-  const user = useResource(`/users/${userId}`);
+  const user = useDataSource(serverResource(`/users/${userId}`));
+  const message = useDataSource(localStorageResource("message"));
+  console.log("message", message);
+
   const { name, age, hairColor, hobbies } = user || {};
 
   return user ? (
